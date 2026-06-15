@@ -2,7 +2,9 @@ name: Claude Code Warmup
 
 on:
   schedule:
-    - cron: '30 0 * * 1-5'
+    # 00:37 UTC = 6:07 AM IST, Mon-Fri. Off-peak minute to dodge GitHub's
+    # top-of-hour scheduling congestion (which delayed the old :30 slot by hours).
+    - cron: '37 0 * * 1-5'
   workflow_dispatch: {}
 
 concurrency:
